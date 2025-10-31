@@ -7,52 +7,219 @@
   <meta name="description" content="Professional powder coating and zinc plating services by SK ENTERPRISE. Industrial finishes, corrosion protection & custom colours." />
   <link rel="icon" href="logoSK-enterprise.jpg">
   <style>
-    :root{
-      --accent:#0b6efd;
-      --bg:#0f1724;
-      --card:#0b1220;
-      --muted:#9aa7bf;
-      --radius:14px;
-      --glass: rgba(255,255,255,0.03);
-      --maxw:1100px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      background:linear-gradient(180deg,#061024 0%, #07102a 100%);
-      color:#e6eef8;
-      line-height:1.6;
-      font-size:1rem;
-    }
-    .container{max-width:var(--maxw);margin:3rem auto;padding:0 1.25rem}
-    header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-    .brand{display:flex;align-items:center;gap:0.75rem}
-    .brand img{width:3.5rem;height:3.5rem;border-radius:8px;object-fit:cover;box-shadow:0 4px 10px rgba(0,0,0,0.3)}
-    nav{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
-    nav a{color:var(--muted);text-decoration:none;padding:0.5rem 0.75rem;border-radius:10px;transition:background 0.3s,color 0.3s}
-    nav a:hover{color:white;background:rgba(255,255,255,0.05)}
-    .hero{position:relative;display:flex;align-items:center;justify-content:center;height:clamp(20rem,50vh,28rem);color:white;border-radius:16px;overflow:hidden;margin-top:1.5rem}
-    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.45)}
-    .hero-content{position:relative;z-index:1;text-align:center;max-width:700px;padding:1.25rem}
-    .hero-content h1{font-size:clamp(1.75rem,4vw,2.5rem);margin-bottom:0.75rem}
-    .hero-content p{color:#d7e2f2;margin-bottom:1rem;font-size:clamp(0.9rem,1vw,1rem)}
-    .btn{background:var(--accent);color:white;padding:0.75rem 1.25rem;border-radius:10px;text-decoration:none;display:inline-block;font-weight:500;transition:background 0.3s}
-    .btn:hover{background:#0a58d3}
-    .whatsapp-btn{background:#25D366;color:white;padding:0.75rem 1.25rem;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;font-weight:500;transition:background 0.3s}
-    .whatsapp-btn:hover{background:#1ebe5d}
-    section{margin-top:3rem}
-    h2{text-align:center;font-size:1.75rem;margin-bottom:1.5rem}
-    .services,.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
-    .card{background:var(--card);padding:1.25rem;border-radius:var(--radius);box-shadow:0 6px 24px rgba(3,10,22,0.6);transition:transform 0.3s}
-    .card:hover{transform:translateY(-4px)}
-    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px}
-    .caption{text-align:center;font-size:0.85rem;color:var(--muted);margin-top:0.3rem}
-    input,textarea{width:100%;padding:0.75rem;border-radius:8px;border:none;margin-top:0.25rem;margin-bottom:0.75rem;background:rgba(255,255,255,0.05);color:white}
-    input:focus,textarea:focus{outline:2px solid var(--accent)}
-    button.btn{cursor:pointer;width:100%;}
-    footer{margin:3rem 0 1rem;color:var(--muted);font-size:0.9rem;text-align:center}
-    img[loading="lazy"]{filter:blur(0);transition:filter 0.3s ease-in-out}
-  </style>
+  :root {
+    --accent:#0b6efd;
+    --bg:#0f1724;
+    --card:#0b1220;
+    --muted:#9aa7bf;
+    --radius:14px;
+    --glass: rgba(255,255,255,0.03);
+    --maxw:1100px;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: linear-gradient(180deg,#061024 0%, #07102a 100%);
+    color: #e6eef8;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  .container { max-width: var(--maxw); margin: 3rem auto; padding: 0 1.25rem; }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .brand img {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  nav a:hover {
+    color: white;
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* ---------------------- HERO SECTION ---------------------- */
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: clamp(20rem,50vh,28rem);
+    color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* NEW overlay layer */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55); /* 55% dark overlay */
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2; /* text above overlay */
+    max-width: 700px;
+    padding: 1.25rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.75rem,4vw,2.5rem);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .hero-content p {
+    color: #d7e2f2;
+    margin-bottom: 1rem;
+    font-size: clamp(0.9rem,1vw,1rem);
+  }
+  /* ---------------------------------------------------------- */
+
+  .btn {
+    background: var(--accent);
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+    transition: background 0.3s;
+  }
+
+  .btn:hover { background: #0a58d3; }
+
+  .whatsapp-btn {
+    background: #25D366;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: background 0.3s;
+  }
+
+  .whatsapp-btn:hover { background: #1ebe5d; }
+
+  section { margin-top: 3rem; }
+
+  h2 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .services, .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 1rem;
+  }
+
+  .card {
+    background: var(--card);
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 24px rgba(3,10,22,0.6);
+    transition: transform 0.3s;
+  }
+
+  .card:hover { transform: translateY(-4px); }
+
+  .gallery img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .caption {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+    background: rgba(255,255,255,0.05);
+    color: white;
+  }
+
+  input:focus, textarea:focus { outline: 2px solid var(--accent); }
+
+  button.btn {
+    cursor: pointer;
+    width: 100%;
+  }
+
+  footer {
+    margin: 3rem 0 1rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  img[loading="lazy"] {
+    filter: blur(0);
+    transition: filter 0.3s ease-in-out;
+  }
+</style>
+
 </head>
 
 <body>
@@ -72,15 +239,16 @@
       </nav>
     </header>
 
-    <section class="hero">
-      <img src="powdercoatingimage.jpeg" alt="Powder coating process in action" loading="lazy">
-      <div class="hero-content">
-        <h1>Precision Powder Coating & Zinc Plating</h1>
-        <p>Enhancing durability and finish for industrial, automotive, and consumer products with professional coating services in Greater Noida.</p>
-        <a href="#contact" class="btn">Get a Quote</a>
-        <a href="https://wa.me/917835046717?text=Hello%20SK%20ENTERPRISE%2C%20I'd%20like%20a%20quote%20for%20powder%20coating%20or%20zinc%20plating%20services." target="_blank" class="whatsapp-btn">💬 Chat on WhatsApp</a>
-      </div>
-    </section>
+   <section class="hero">
+  <img src="powdercoatingimage.jpeg" alt="Powder coating process in action" loading="lazy">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Precision Powder Coating & Zinc Plating</h1>
+    <p>Enhancing durability and finish for industrial, automotive, and consumer products with professional coating services in Greater Noida.</p>
+    <a href="#contact" class="btn">Get a Quote</a>
+    <a href="https://wa.me/917835046717?text=Hello%20SK%20ENTERPRISE%2C%20I'd%20like%20a%20quote%20for%20powder%20coating%20or%20zinc%20plating%20services." target="_blank" class="whatsapp-btn">💬 Chat on WhatsApp</a>
+  </div>
+</section>
 
     <section id="services">
       <h2>Our Services</h2>
@@ -116,7 +284,7 @@
           <div class="caption">Benefits of Powder Coating</div>
         </div>
         <div>
-          <img src="https://images.unsplash.com/photo-1602524201442-f7eabaf0b464?q=80&w=800&auto=format&fit=crop" alt="coloured coated panels" loading="lazy">
+          <img src="powdercoated_panels.jpg" alt="coloured coated panels" loading="lazy">
           <div class="caption">Coloured Coated Panels</div>
         </div>
       </div>
